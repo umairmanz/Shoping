@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "_AdminLayout";
+}
+<html>
+    <head>
+        <title> admin layout</title>
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+        
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+        </head>
+
+    <body>
+        <div class="navbar navbar-inverse">
+	         <div class="navbar-inner">
+	 	        <form action="~/Owner/Logout" method="post">     
+                    <input type="submit" name="Logout" value="Logout" style="float:right; margin-top:7px;">   
+                </form>      
+            </div>           
+        </div>
+        
+        @RenderBody();
+    </body>
+
+ </html>

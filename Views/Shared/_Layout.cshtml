@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <title>term-project</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/js-image-slider.js"></script>
+    <link href="~/Content/js-image-slider.css" rel="stylesheet" />
+    <link href="~/Content/generic.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/footer.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    
+    </head>
+
+<body style="background-color:#A52A2A">
+     <div class="navbar" >
+            <div class="navbar-inner">
+
+                <ul class="nav nav-pills nav pull-right ">
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Product/Mens">Men's Collection</a></li>
+                    <li><a href="/Product/Women">Women's Collection</a></li>
+                    <li><a href="/Product/Kids">Kids Collection</a></li>
+                    <li><a href="/Product/Accessories">Acessories Collection</a></li>
+                    <li><a href="/Owner/Contact">Contact us</a></li>
+                </ul>
+            </div></div>
+    <div class="longdiv" style="background-color: #d0d15c; height:520px;"id="header">
+
+        <div style="height: 100px; width: 100px;">
+            <img class="logo" src="~/images/img.png" />
+        </div>
+
+        <p style="font-family: 'Adobe Arabic'"><font size="6">SHOPPING STORE </font></p>
+
+  
+        <div id="sliderFrame">
+            <div id="slider">
+
+                <img style="width: 1050px;" src="~/images/kid3.jpg" alt="" />
+
+                <img style="width: 1050px;" src="~/images/mens1.jpg" alt="" />
+                <img style="width: 1050px;" src="~/images/shop2.jpg" alt="" />
+                <img style="width: 1050px;" src="~/images/girl4.jpg" alt="" />
+                <img style="width: 1050px;" src="~/images/kids4.jpg" />
+            </div>
+        </div>
+
+       <div class="navbar" style="margin-top:30px;" >
+            <div class="navbar-inner">
+
+                <ul class="nav nav-pills nav pull-left ">
+                    <li><a href="/Home/SearchProduct">Search a Product</a></li>
+                    <li style="margin-left:700px;"><a>Your Cart <img src="~/images/cart.png " style = "height:20px; width:20px;"/>   @Session["cart"]</a></li>
+                    
+                </ul>
+            </div></div>
+        </div>
+        <div class="longdiv" style="background-color:#d0d15c;height:1420px;margin-top:0px;"id="aheader">
+           
+
+        @RenderBody();
+        
+    </div>
+
+    <div class="footerdiv" style="position: static">
+        <div style="text-align: left; margin-left: 140px;"><a href="/Home/Index">Home</a> <span>|</span> <a href="/Mens/Index">Men's Collection</a> <span>|</span> <a href="/Women/Index">Women's Collection</a> <span>|</span> <a href="/Kids/Index">Kids Collection</a> <span>|</span> <a href="/Acessories/Index">Acessories</a> <span>|</span> <a href="#">Contact Us</a> </div>
+        <div style="text-align: right; margin-right: 140px;">
+            <a href="https://www.facebook.com/umairmanzoor2">
+                <img class="image" src="~/images/fb.png"></a> <span>|</span> <a href="">
+                    <img style="margin-right: 20px;" class="image" src="~/images/google.png"></a>
+        </div>
+        <div style="text-align: center; margin-top: 10px;">&copy; All Resources are reserved by<a href="https://www.facebook.com/umairmanzoor2"> Umair Manzoor</a> </div>
+    </div>
+</body>
+
+
+
+</html>

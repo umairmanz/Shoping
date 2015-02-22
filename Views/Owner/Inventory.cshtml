@@ -1,0 +1,33 @@
+﻿@model List<term.Models.Product>
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Inventory";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrapn.js"></script>
+<link href="~/Content/bootstrapn.css" rel="stylesheet" />
+@foreach (var i in Model)
+{
+    <div class="row" style="margin-left:500px;">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="@i.address" />
+                <div class="caption">
+                    <h3>@i.name</h3>
+                    <p>product id : @i.Id</p>
+                    <p>Category : @i.category</p>
+                    <p>Detail     :@i.detail</p>
+                    <p>Sub Category :@i.subcategory</p>
+                    <form action="~/Owner/Edit" method="post">
+                        @*<p><a href="/Owner/Edit/@i.Id" class="btn btn-primary" role="button">Edit</a> 
+                           <a href="/Owner/Delete/@i.Id" class="btn btn-primary" role="button">Delete</a>
+
+                        </p>*@
+                        @Html.ActionLink("Edit", "Edit", new { id = i.Id}) | @Html.ActionLink("Delete", "Delete", new { id = i.Id}) 
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

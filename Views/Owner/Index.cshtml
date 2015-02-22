@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <title>Admin</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+
+        //$(document).ready(function () {
+
+        //    //$('#checking').hide();
+
+        //    $('#b1').click(function () {
+
+        //        var userName = $('#name').val();
+
+        //        //alert('User Name ='+ userName);
+        //       // $('#checking').show();
+        //        $.getJSON("/Owner/chkValidity?name=" + userName, function (data) {
+        //            //$('#checking').hide();
+        //            if (data) {
+        //                $('#result').text("User already exists in database");
+
+        //            }
+        //            else {
+        //                $('#result').text("User Name is available");
+        //            }
+        //        });
+
+        //    });
+
+        //});
+
+
+        function chk() {
+
+            var userName = $('#name').val();
+
+
+
+            //alert('User Name ='+ userName);
+
+            $.getJSON("/Owner/chkValidity?name=" + userName, function (data) {
+
+                if (data) {
+                    $('#result').text("Admin name is Correct");
+
+                    return false;
+                }
+                else {
+                    $('#result').text("Admin name is not correct");
+                    return true;;
+
+                }
+            });
+        }
+
+
+        
+
+    </script>
+
+</head>
+
+
+<body @*style="background-image:url(/images/admin1.jpg) "*@>
+    <div class="login" style="border: none;">
+        <form id="ad" action="~/Owner/Login" method="post" style="margin-left: 180px; margin-top: 40px;">
+            <input type="text" placeholder="Name" name="name" id="name" onchange="chk();" required><br>
+            <div id="result"></div>
+            <br />
+
+            <input type="password" placeholder="Password" name="password" id="pass" required><br>
+            <input type="Submit" value="Login" id="b1" >
+        </form>
+    </div>
+</body>
+</html>
+@*@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+}*@

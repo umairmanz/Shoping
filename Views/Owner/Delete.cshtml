@@ -1,0 +1,12 @@
+﻿@model term.Models.Product
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+   // Layout = null;
+    ViewBag.Title = "Delete";
+}
+
+<div style="margin:auto">
+    <h3 style="margin:auto">Are You Sure You Want To Delete ? </h3>
+    <a href="/Owner/Delete1/@Model.Id" style="margin-left:20px;">Yes</a>
+    <a href="/Owner/Inventory" style="margin-left:20px;">No</a>
+    </div>

@@ -1,0 +1,51 @@
+﻿@model List<term.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+@*<html>*@
+@*<head>*@
+@*<title>term-project</title>*@
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/js-image-slider.js"></script>
+<link href="~/Content/js-image-slider.css" rel="stylesheet" />
+<link href="~/Content/generic.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+<link href="~/Content/footer.css" rel="stylesheet" />
+@*</head>*@
+
+@*<body>*@
+
+<div class="longdiv" style="height: 1200px; width: 900px; margin-top: 15px; margin-left: 70px;">
+
+
+    @foreach (var x in Model)
+    {
+@*    @x.category; 
+}*@
+        <div class="left mens" style="margin-top: 70px;">
+            <img style="height: 200px; width: 250px;" src="@x.address" />
+            <p class="price">Product id: @x.Id</p>
+            <p class="price">Price Rs: @x.price</p>
+            <p class="price">Product Category: @x.category</p>
+
+             <form method="post" action="~/Product/Detail/@x.Id" style="text-align:right;margin-right:15px;margin-top:10px">
+
+                <input type="submit" value="Detail" style="border: hidden" />
+            </form>
+        </div>
+    
+    }
+
+
+
+</div>
+
+@*</body>*@
+
+
+
+@*</html>*@
+

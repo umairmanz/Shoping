@@ -1,0 +1,65 @@
+﻿@model term.Models.Product
+
+@{
+    
+    ViewBag.Title = "Cart";
+}
+@Scripts.Render("~/bundles/jquery")
+    
+    <script type="text/javascript">
+        function order() {
+
+            var userName = $('#o').val();
+
+
+
+            //alert('User Name ='+ userName);
+
+            $.getJSON("/Product/Order?ordr=" + userName, function (data) {
+
+                if (data) {
+                    //alert("mn,nk");
+                    $('#od').append("Payment will be make on delievery and your order will be deliever soon to you");
+                    //alert("mn,nk");
+                    return false;
+                }
+                else {
+                   // alert("false");
+                    $('#od').text("Address is wrong");
+                    return true;;
+
+                }
+            });
+        }
+    </script>
+<h4><font style="margin: auto"> This Product is added to your cart</font></h4>
+
+
+<div class="left mens" style="height: auto;width:auto">
+    <img src="@Model.address" style="width:300px;height:300px"/>
+</div>
+<div class="left mens" style="margin-top: 160px;margin-left:20px;width:auto;height:auto; border:none " id="od">
+    <table>
+        <tr>
+            <td style="width:200px;"><h4>Product Name</h4></td>
+            <td style="width:200px;"><h4>Sub Category</h4></td>
+            <td style="width:100px;"><h4>Price</h4></td>
+        </tr>
+        <tr>
+            <td style="width:200px;">@Model.name</td>
+            <td style="width:200px;">@Model.subcategory</td>
+            <td style="width:100px;">@Model.price</td>
+        </tr>
+
+    </table>
+    <p style="margin-top:30px;">Submit your Address to Order</p>
+    <form action="~/Product/Order">
+    <input type="text" style="margin-top:5px;" id="o" required />
+    <input type="button" value="Order" onclick="order()" />
+        </form>
+
+
+</div>
+    
+
+

@@ -1,0 +1,100 @@
+.products {   
+    height:200px;
+    width:700px;
+    border-style:solid;
+    border-color:#999;
+    margin-left:90px;
+    margin-top:15px;
+    
+}
+.left {
+  float: left;
+  width: 125px;
+  text-align: right;
+  margin: 0px 0px;
+  display: inline;
+}
+
+.right {
+  float: left;
+  text-align: left;
+  margin: 0px 0px;
+  display: inline;
+}
+.mens {   
+    height:350px;
+    width:250px;
+    border-style:inset;
+    border-color:#cfcfcf;
+    margin-left:30px;
+    margin-top:40px;
+    
+}
+.mens1 {   
+    height:300px;
+    width:200px;
+    border-style:dotted;
+    border-color:#cfcfcf;
+    margin-left:90px;
+    margin-top:40px;
+    
+}
+.mens2 {   
+    height:300px;
+    width:200px;
+    border-style:dotted;
+    border-color:#cfcfcf;
+    margin-left:90px;
+    margin-top:80px;
+    
+}
+.pdiv {   
+    height:200px;
+    width:200px;
+    border-style:dotted;
+    border-color:#cfcfcf;
+  
+    
+}
+ 
+.price {
+    margin-top:15px;
+    margin-left:10px;
+    text-align:left;
+    font-weight:bold;
+}
+.footerdiv {
+    border-top:dashed 1px #cfcfcf; 
+    margin-top:10px; 
+    padding:10px 0; 
+    color:#8e8e8e;
+}
+.image {
+    height:50px;
+    width:50px;
+    
+}
+.login {
+    margin-left:400px;
+    margin-top:230px;
+    height:200px;
+    width:500px;
+    color:#cfcfcf;
+    border-style:groove;
+}
+.upload {
+    margin-left:450px;
+    margin-top:100px;
+    height:500px;
+    width:400px;
+    color:#cfcfcf;
+    border-style:groove;
+}
+.Contact {
+    margin-left:100px;
+    margin-top:30px;
+    /*border-color:#cfcfcf;
+    border-style:groove;*/
+    width:350px;
+    height:400px;
+}

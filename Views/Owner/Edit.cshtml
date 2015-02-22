@@ -1,0 +1,100 @@
+﻿@model term.Models.Product
+@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Inventory";
+}
+
+<div style="height: 500px; width: 200px; margin: auto">
+    <form method="post" action="~/Owner/Update">
+        <img src="@Model.address" style="height:200px ; width:205px">
+        Id @Html.TextBoxFor(a => Model.Id)
+        Name @Html.TextBoxFor(b => Model.name)
+        Price @Html.TextBoxFor(c => Model.price)
+        Category @Html.TextBoxFor(d => Model.category)
+        SubCategory @Html.TextBoxFor(m => Model.subcategory)
+        Details @Html.TextBoxFor(m => Model.detail)
+       
+       @Html.TextBox("nam", null, new { id="1"})
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model term.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+   
+
+    <fieldset>
+        <legend>Product</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Id)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.name)
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.price)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.subcategory)
+           
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.category)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.detail)
+           
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+*@

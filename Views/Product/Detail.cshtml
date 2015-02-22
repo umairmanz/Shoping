@@ -1,0 +1,22 @@
+﻿@model term.Models.Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Detail";
+}
+ 
+<div style="margin-top: 70px;margin-left:50px; height:500px;width:450px;border-right-color:none;display:inline; float:left">
+            <img style="height: 500px; width: 450px;" src="@Model.address" />
+            
+        </div>
+<div style="display:inline; float:left;margin-top:55px; height:300px;width:200px; margin-left:60px;">
+            <h4 class="price">Product id: @Model.Id</h4>
+            <h4 class="price">Product Name Rs: @Model.name</h4>
+            <h4 class="price">Product Category: @Model.category</h4>
+            <h4 class="price">Product Subcategory: @Model.subcategory</h4>
+            <h4 class="price">Made Rs: @Model.detail</h4>
+            <h4 class="price">Price Rs: @Model.price</h4>
+             <form method="post" action="~/Product/Cart/@Model.Id" style="text-align:right;margin-right:15px;margin-top:10px">
+
+                <input type="submit" value="Add to Cart" style="border: hidden"/>
+            </form>
+    </div>

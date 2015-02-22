@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "SearchProduct";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    function chk() {
+
+        var searchvalue = $('#search').val();
+        //alert(searchvalue);
+        //var searchvalue = "ring";
+
+        //alert('User Name ='+ userName);
+        $('#mn').empty();
+        $.getJSON("/Product/search?sea=" + searchvalue, function (data123) {
+
+            if (data123) {
+                $.each(data123, function (i, item) {
+                    //alert(item.Id);
+
+                    $('#mn').append("<div class='left mens' style='margin-top: 70px;'>" +
+                                        "<img style='height: 200px; width: 250px;' src=" + item.address + " />" +
+                                        "<p class='price'>Product id:" + item.Id + "</p>" +
+                                        "<p class='price'>Price Rs: " + item.price + "</p>" +
+                                        "<p class='price'>Product Category: " + item.category + "</p>" +
+                                        //"<a href='Detail/"+item.Id+"'>detail</a>"+
+                                        "<form method='post' action='Detail/" + item.Id + "' style='text-align:right;margin-right:15px;margin-top:10px'>"
+
+                                        + "<input type='submit' value='Detail' style='border: hidden'>" +
+                                        @*+"@ViewBag.a=" + item.Id +*@
+
+                                        "</form>" +
+                                        "</div>");
+                });
+
+                return false;
+            }
+            else {
+
+                $('#mn').text("Your required search is not available");
+                return true;;
+
+            }
+        });
+    }
+</script>
+
+<div class="navbar navbar" style="margin: auto; width: 1000px; margin-top: 50px;">
+    <div class="navbar-inner">
+
+        <form class="navbar-form pull-left" action="~/Product/search">
+            <input type="text" class="search-query" placeholder="Search" id="search" name="sea1">
+            <button type="button" class="btn" style="height: 25px; margin-top: 6px;" onclick="chk();">Submit</button>
+            <p>Search will be return result if you type category like mens , women , kids</p>
+        </form>
+
+    </div>
+</div>
+<div id="mn" style="margin: auto; margin-top: 50px; width: 1000px"></div>
+
